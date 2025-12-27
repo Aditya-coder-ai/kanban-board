@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearpath</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images\favicon-32x32.png" type="image/png">
+</head>
+<body>
+    <main>
+        <nav>
+        <div class="right">
+            <img src="images/logo.png"alt="ClearPath">
+        </div>
+        <div class="left">
+            <button id="toggle-modal">ADD NEW TASK</button>
+        </div>
+        </nav>
+        <section class="board">
+            <div class="task-column" id="todo">
+                <div class="heading">
+                    <div class="left">To-Do</div>
+                    <div class="right"> Count</div>
+                </div>
+                <div draggable="true" class="task">
+                    <div class="task-tittle">
+                        <h2>Task 1</h2>
+                        <p>Discripton of task 1</p>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="task-column hover-over" id="progress">
+              <div class="heading">
+                    <div class="left">In-progress</div>
+                    <div class="right"> Count</div>
+              </div>
+            </div>
+            <div class="task-column" id="done">
+                <div class="heading">
+                    <div class="left">Done</div>
+                    <div class="right"> Count</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal new-add-task">
+        <div class="bg"></div>
+        <div class="center">
+        <input id="task-title-input"
+        type="text" 
+        placeholder="task tittle"
+        />
+        <textarea id="task-desc" placeholder="task Discripton"></textarea>
+        <button id="add-new-task" class="new-task-btn">ADD TASK</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

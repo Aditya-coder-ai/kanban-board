@@ -31,6 +31,21 @@ document.querySelectorAll('.task .delete-btn').forEach(deleteBtn => {
     addDeleteListener(deleteBtn);
 });
 
+function updateDeleteBtnColor(task) {
+    const deleteBtn = task.querySelector('.delete-btn');
+    const parentColumn = task.closest('.task-column');
+    
+    if (parentColumn && parentColumn.id === 'done') {
+        deleteBtn.style.backgroundColor = '#27ae60';
+        deleteBtn.style.color = 'white';
+    } else if (parentColumn && parentColumn.id === 'progress') {
+        deleteBtn.style.backgroundColor = '#2737ae';
+        deleteBtn.style.color = 'white';
+    } else {
+        deleteBtn.style.backgroundColor = '';
+        deleteBtn.style.color = '';
+    }
+}
 function addEventListenerOnColumn(column){
     column.addEventListener("dragenter",(e)=>{
         e.preventDefault();
@@ -49,7 +64,7 @@ function addEventListenerOnColumn(column){
         
         column.appendChild(dragElement);
         column.classList.remove("hover-over");
-
+        updateDeleteBtnColor(dragElement);
     })
 };
 addEventListenerOnColumn(todo);
@@ -113,6 +128,7 @@ columns.forEach(column => {
         if (draggedTask) {
             column.appendChild(draggedTask);
             updateAllCounts();
+            updateDeleteBtnColor(draggedTask);
         }
     });
 });

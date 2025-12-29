@@ -89,6 +89,11 @@ section{
     justify-items: center;
 
 }
+@media (max-width: 768px) {
+    section {
+        flex-direction: column; 
+    }
+}
 section .task-column{
     flex-grow: 1;
     background-color: var(--task-column);
@@ -218,4 +223,5 @@ section .task-column .task button{
 
 .new-task-btn:active {
   transform: scale(0.97);
+
 }
